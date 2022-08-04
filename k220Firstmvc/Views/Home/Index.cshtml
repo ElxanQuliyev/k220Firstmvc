@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row">
+        @foreach (BookToGenre item in ViewBag.AuthorList)
+        {
+            <div class="col-lg-4">
+                <h5>Book Name:@item.Book.Name</h5>
+                <h6>Genre Name:@item.Genre.Name</h6>
+                <h5>Author Name:@item.Book.Author.Name</h5>
+                <hr />
+            </div>
+        }
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>id</td>
+            <td>Book Name</td>
+            <td>Author name</td>
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach (Book item in ViewBag.BookList)
+        {
+         <tr>
+             <td>@item.Id</td>
+             <td>@item.Name</td>
+             <td>@item.Author.Name</td>
+
+         </tr>                 
+        }
+    </tbody>
+</table>
